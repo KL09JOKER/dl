@@ -1,0 +1,22 @@
+#include <Servo.h>
+Servo myservo;
+int i;
+void setup() {
+}
+void servoSweep()
+{
+myservo.attach(11);
+int pos;
+for(int i=0; i<2;i++)
+{
+for (pos = 0; pos <= 180; pos += 30) { // goes from 0 degrees to 180 degrees
+// in steps of 1 degree
+myservo.write(pos); // tell servo to go to position in variable 'pos'
+delay(1000); // waits 1ms for the servo to reach the position
+}
+}
+}
+void loop() {
+servoSweep();
+delay(10000);
+}
